@@ -16,4 +16,26 @@ The package exception has following classes to handle exceptions
         DuplicateCustomer
         MethodArgumentNotValidException to handle input errors
 
+To Test use the following curl commands:
 
+    Get All Customers
+        curl --location 'localhost:8080/api/customer'
+
+    Find Customer by Id
+        curl --location 'localhost:8080/api/customer/1'
+
+    Find Customer By emailId
+        curl --location 'localhost:8080/api/customer/find?emailId=js2%40gmail.com'
+
+    Add a Customer
+        curl --location 'localhost:8080/api/customer' \
+            --header 'Content-Type: application/json' \
+            --data-raw '{
+            "firstName" : "John-2",
+            "lastName" : "Smith-2",
+            "emailId" : "js1@gmail.com"
+
+    Delete A Customer:
+        curl --location --request DELETE 'localhost:8080/api/customer/1'
+}'
+    
